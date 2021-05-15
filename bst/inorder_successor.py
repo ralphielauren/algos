@@ -3,10 +3,12 @@ BST = BT where for each Node:
  -> LEFT CHILD < NODE
  -> RIGHT CHILD > NODE
 
-In Binary Tree, Inorder successor of a node is the next node in Inorder traversal of the Binary Tree.
+In Binary Tree, Inorder successor of a node is the next
+node in Inorder traversal of the Binary Tree.
 Inorder Successor is NULL for the last node in Inorder traversal.
 
-Given a BST, and a reference to a Node x in the BST. Find the Inorder Successor of the given node in the BST.
+Given a BST, and a reference to a Node x in the BST.
+Find the Inorder Successor of the given node in the BST.
 """
 
 """
@@ -14,9 +16,11 @@ Given a BST, and a reference to a Node x in the BST. Find the Inorder Successor 
 - Space Complexity:
 
 For node, if:
-1. RIGHT subtree NOT NULL, successor in there. SUCCESSOR = Find min key val in right subtree. 
-2. RIGHT subtree IS NULL, successor in one of parents. SUCCESSOR = Climb up until Node is left child of parent, and that 
-parent is the successor.
+1. RIGHT subtree NOT NULL, successor in there.
+   --> SUCCESSOR = Find min key val in right subtree.
+2. RIGHT subtree IS NULL, successor in one of parents.
+   --> SUCCESSOR = Climb up until Node is left child of parent, and that
+   parent is the successor.
 """
 
 
@@ -40,7 +44,6 @@ def successor(node: Node):
         node = parent  # climb up
         parent = node.parent
     return parent
-
 
 
 def get_min(node: Node):
@@ -76,17 +79,13 @@ def insert(node: Node, data: int):
 if __name__ == "__main__":
     root = None
     root = insert(root, 35)
-    root = insert(root, 10);
-    root = insert(root, 45);
-    root = insert(root, 5);
-    root = insert(root, 14);
-    root = insert(root, 7);
-    root = insert(root, 16);
+    root = insert(root, 10)
+    root = insert(root, 45)
+    root = insert(root, 5)
+    root = insert(root, 14)
+    root = insert(root, 7)
+    root = insert(root, 16)
 
     t = root.left
     print(t.data)
     print(successor(t).data)
-
-
-
-
