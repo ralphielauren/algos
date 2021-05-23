@@ -53,16 +53,6 @@ class QuickUnion:
 
 
 if __name__ == "__main__":
-    #  0 1 2 3 4 5 6 7 8 9      union (4,3)
-    #  0 1 2 3 3 5 6 7 8 9      union (3,8)
-    #  0 1 2 8 3 5 6 7 8 9      union (6,5)
-    #  0 1 2 8 3 5 5 7 8 9      union (9,4)
-    #  0 1 1 8 3 5 5 7 8 8      union (2,1)
-    #  0 1 1 8 3 0 5 7 8 8      union (5,0)
-    #  0 1 1 8 3 0 5 1 8 8      union (7,2)
-    #  1 1 1 8 3 0 5 1 8 8      union (6,1)
-    #  1 8 1 8 3 0 5 1 8 8      union (7,3)
-
     test = QuickUnion(10)
     assert test.parent_id == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     test.union(4, 3)
