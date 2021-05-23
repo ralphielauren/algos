@@ -1,5 +1,5 @@
 """
-DYNAMIC CONNECTIVITY
+DYNAMIC CONNECTIVITY - QUICK FIND
 --------------------
 Problem Statement:
 
