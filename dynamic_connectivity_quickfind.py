@@ -10,9 +10,9 @@ and efficiently determine if items are connected (our find method) ?
 """
 
 #  Solution: QuickFind
-#  0 1 2 3 4 5 6 7 8 9      connect (0,5) (5,8)
-#  5 1 2 3 4 5 6 7 8 9
-#  8 1 2 3 4 8 6 7 8 9
+#  0 1 2 3 4 5 6 7 8 9      union (0,5)
+#  5 1 2 3 4 5 6 7 8 9      union (5,8)
+#  8 1 2 3 4 8 6 7 8 9      union (7,8)
 
 
 class QuickFind:
@@ -36,8 +36,10 @@ class QuickFind:
 if __name__ == "__main__":
     test = QuickFind(10)
     test.union(0, 5)
-    print(test.lst)
+    assert test.lst == [5, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     test.union(5, 0)
-    print(test.lst)
-    test.union(8, 5)
-    print(test.lst)
+    assert test.lst == [5, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    test.union(5, 8)
+    assert test.lst == [8, 1, 2, 3, 4, 8, 6, 7, 8, 9]
+    test.union(7, 8)
+    assert test.lst == [8, 1, 2, 3, 4, 8, 6, 8, 8, 9]
